@@ -1,12 +1,18 @@
-export default userRepository = (repository) => {
-    const fetchByProp = (prop) => repository.fetchByProp(prop);
-    const signin = (user) =>  repository.signin(user);
-    const login = (user) => repository.login(user);
-    const confirmed = (user,code) => repository.confirmed(user,code)
+function userRepository (repository) {
+    const fetchByProp = async (prop) => await repository.fetchByProp(prop);
+    const add = async (user) => await repository.add(user);
+    const addNotConfirmedUser = async (newConfirmation) => await repository.addNotConfirmedUser(newConfirmation);
+    const deleteConfirm = async (confirmation) => await repository.deleteConfirm(confirmation);
+    const fetchEmail = async (prop) => await repository.fetchEmail(prop)
+    const login = async (data) => {await repository.login(data)}
     return {
       fetchByProp,
-      signin,
-      login,
-      confirmed
+      add,
+      addNotConfirmedUser,
+      deleteConfirm,
+      fetchEmail,
+      login
     };
-  }
+}
+
+export default userRepository

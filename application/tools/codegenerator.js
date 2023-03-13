@@ -7,4 +7,4 @@ function getRandomInt (max)  {
     return token;
 }
 
-export {getRandomInt};
+export default getRandomInt;

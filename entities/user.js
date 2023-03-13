@@ -1,10 +1,8 @@
-export default user = (email, username, password, confirmationCode, status) => {
+function user (email, username, password)  {
     return {
         getEmail: () => email,
         getUserName: () => username,
         getPassword: () => password,
-        getConfirmationCode : () => confirmationCode,
-        getStatus: () => status
-        
     };
 }
+export default user

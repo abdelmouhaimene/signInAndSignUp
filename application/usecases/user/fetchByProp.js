@@ -1,3 +1,5 @@
-export default fetchByProp = (prop,repo) => {
-    return repo.fetchByProp(prop);
+async function fetchByProp  (prop,repo)  {
+    return await repo.fetchByProp(prop);
 }
+
+export default fetchByProp 
